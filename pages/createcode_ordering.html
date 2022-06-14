@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="../_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css">
+<link rel="stylesheet" href="../_assets/css/styles.min.css">
+<link rel="stylesheet" href="../_assets/css/custom.css">
+   <script src="../_assets/thirdpartylib/jquery/jquery-3.3.1.slim.min.js" defer></script>
+   <script src="../_assets/thirdpartylib/popper-js/popper.min.js" defer></script>
+   <script src="../_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js" defer></script>
+   <script src="../_assets/js/scripts.min.js" defer></script>
+   <script src="https://d3js.org/d3.v5.min.js" defer></script>
+   <script src="../_assets/js/question-ordering.js" defer></script>
+   <title>Create Code for Ordering Questions</title>
+
+</head>
+
+<body><main>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-10 offset-sm-1">
+<h1>Create Code for Ordering Questions</h1>
+<p><strong>** DO NOT EDIT THIS PAGE. Enter a title above and save this page in a hidden module. **</strong></p>
+<h2>Sample Ordering Question</h2>
+<fieldset><legend>Order the following states from largest (1) to smallest (6) by area.</legend>
+<p><label><input id="order-answer1" name="order-answer" type="text" size="1" /> Louisiana</label></p>
+<p><label><input id="order-answer2" name="order-answer" type="text" size="1" /> South Carolina</label></p>
+<p><label><input id="order-answer3" name="order-answer" type="text" size="1" /> Oklahoma</label></p>
+<p><label><input id="order-answer4" name="order-answer" type="text" size="1" /> Alaska</label></p>
+<p><label><input id="order-answer5" name="order-answer" type="text" size="1" /> Montana</label></p>
+<p><label><input id="order-answer6" name="order-answer" type="text" size="1" /> Rhode Island</label></p>
+<button class="btn btn-dark" onclick="checkOrder()">Check Answer</button> <br /><br />
+<div id="order-result" role="alert"><p>Feedback will show here.</p></div>
+<script>
+var ORclicks = 0;
+function checkOrder() {
+ORclicks += 1;
+// create array from student guesses
+var guessArray = [];
+var guessColl = document.getElementsByName("order-answer");
+for (var i = 0; i < guessColl.length; i++) {
+  if (guessColl[i].value !== null && guessColl[i].value !== '') {
+    guessArray.push(guessColl[i].value);
+  }
+    }
+// set correct order
+var correctOrder = ["4", "5", "3", "1", "2", "6"];
+
+// determine if student guesses match correct order
+if (JSON.stringify(guessArray) === JSON.stringify(correctOrder)) 
+{
+  const green = document.createElement("strong");
+  green.style.color = "green";
+  green.innerHTML = "Attempt " + ORclicks + ": Correct!";
+  var element = document.getElementById("order-result").children[0];
+  element.replaceChild(green, element.childNodes[0]);
+}
+else 
+{
+const red = document.createElement("strong");
+red.style.color = "#dc143c";
+red.innerHTML = "Attempt " + ORclicks + ": Incorrect! Try again!";
+var element = document.getElementById("order-result").children[0];
+element.replaceChild(red, element.childNodes[0]);
+}
+}
+</script>
+<hr />
+<h2>Create Your Own Question</h2>
+<p>Required fields are marked with an asterisk (*).</p>
+<fieldset><legend>Ordering Question</legend>
+<p><label>Enter the question number. <input id="qnumber" type="text" size="5"/> (Leave blank if you only need one ordering question per page)</label></p>
+<p><label>Enter the directions for your ordering question. * <input id="directions" type="text" size="50" required/></label></p>
+<p>Enter the answers in the correct order below. They will be shuffled when the code is generated. (You do not have to use all six.)</p>
+<p><label>1. * <input id="order1" name="order" type="text" size="50" required/></label></p>
+<p><label>2. * <input id="order2" name="order" type="text" size="50" required/></label></p>
+<p><label>3. <input id="order3" name="order" type="text" size="50" /></label></p>
+<p><label>4. <input id="order4" name="order" type="text" size="50" /></label></p>
+<p><label>5. <input id="order5" name="order" type="text" size="50" /></label></p>
+<p><label>6. <input id="order6" name="order" type="text" size="50" /></label></p>
+</fieldset>
+<p><button class="btn btn-success" onclick="createCode()">Create Code</button> <button id="clearQ" class="btn btn-danger" onclick="clearQuestion()">Clear Question</button></p>
+<p>Code will generate below:</p>
+<p id="generate" style="user-select: all;" class="bg-light"></p>
+<button id="copied" class="btn btn-success" onclick="copyCode('generate')">Copy Code</button> <button id="clear" class="btn btn-danger" onclick="clearCode('generate')">Clear Code</button><hr />
+<h2>Copy &amp; Paste Code</h2>
+<p>Click the Copy Code button above to copy the code to the clipboard. On your D2L page, open the HTML editor, click the Insert Stuff icon, choose Enter Embed Code, right-click and choose Paste. (The preview will not be accurate.)</p>
+<p><strong>Make sure to click Save and Close BEFORE testing the buttons. DO NOT CLICK on the buttons while still in editing mode or D2L will change the code.</strong></p>
+<p>To add another question, click Clear Question and Clear Code above to clear out the boxes and start over.</p>
+<p>Student answers are not tracked or graded and will be reset when refreshing the page.</p>
+</div>
+<div class="col-12"><footer>
+<p><img src="../_assets/img/logo.png" alt="" /></p>
+</footer></div>
+</div>
+</div>
+</main></body>
+</html>

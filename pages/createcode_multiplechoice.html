@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="../_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css">
+<link rel="stylesheet" href="../_assets/css/styles.min.css">
+<link rel="stylesheet" href="../_assets/css/custom.css">
+   <script src="../_assets/thirdpartylib/jquery/jquery-3.3.1.slim.min.js" defer></script>
+   <script src="../_assets/thirdpartylib/popper-js/popper.min.js" defer></script>
+   <script src="../_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js" defer></script>
+   <script src="../_assets/js/scripts.min.js" defer></script>
+   <script src="../_assets/js/question-multiplechoice.js" defer></script>
+   <title>Create Code for Multiple Choice Questions</title>
+</head>
+<body><main>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-10 offset-sm-1">
+<h1>Create Code for Multiple Choice or True/False Questions</h1>
+<p><strong>** DO NOT EDIT THIS PAGE. Enter a title above and save this page in a hidden module. **</strong></p>
+<h2>Sample Multiple Choice Question</h2>
+<fieldset>
+<legend>What is the capital of Michigan?</legend>
+<input type="button" class="btn btn-light btn-block" value="Detroit" onclick="this.value='Incorrect: Detroit'; this.style.backgroundColor = '#dc143c'; this.style.color = 'white'" /> 
+<input type="button" class="btn btn-light btn-block" value="Lansing" onclick="this.value='Correct: Lansing'; this.style.backgroundColor = 'green'; this.style.color = 'white'" /> 
+<input type="button" class="btn btn-light btn-block" value="Ann Arbor" onclick="this.value='Incorrect: Ann Arbor'; this.style.backgroundColor = '#dc143c'; this.style.color = 'white'" /> 
+<input type="button" class="btn btn-light btn-block" value="Grand Rapids" onclick="this.value='Incorrect: Grand Rapids'; this.style.backgroundColor = '#dc143c'; this.style.color = 'white'" />
+</fieldset>
+<hr>
+<h2>Create Your Own Question</h2>
+<p>Required fields are marked with an asterisk (*).</p>
+<fieldset><legend>Multiple Choice or True/False Question</legend>
+<p><label>Enter the multiple choice or true/false question. * <input id="MCquestion" type="text" size="65" required/></label></p>
+<p>Enter your answer choices and check the box(es) next to the correct answer(s). (You do not have to use all five.)</p>
+<label>Choice 1. * <input id="choice1" name="choice" type="text" size="60" required/></label> <label>Check if 1 is correct: <input type="checkbox" name="checkbox" id="check1" /></label> <br /><br />
+<label>Choice 2. <input id="choice2" name="choice" type="text" size="60" /></label> <label>Check if 2 is correct: <input type="checkbox" name="checkbox" id="check2" /></label> <br /><br />
+<label>Choice 3. <input id="choice3" name="choice" type="text" size="60" /></label> <label>Check if 3 is correct: <input type="checkbox" name="checkbox" id="check3" /></label> <br /><br />
+<label>Choice 4. <input id="choice4" name="choice" type="text" size="60" /></label> <label>Check if 4 is correct: <input type="checkbox" name="checkbox" id="check4" /></label> <br /><br />
+<label>Choice 5. <input id="choice5" name="choice" type="text" size="60" /></label> <label>Check if 5 is correct: <input type="checkbox" name="checkbox" id="check5" /></label> <br /><br />
+</fieldset>
+<p><button class="btn btn-success" onclick="createCodeMC()">Create Code</button> <button id="clearQ" class="btn btn-danger" onclick="clearQuestion()">Clear Question</button></p>
+<p>Code will generate below:</p>
+<p id="generateMC" style="user-select: all;" class="bg-light"></p>
+<button id="copied" class="btn btn-success" onclick="copyCodeMC('generateMC')">Copy Code</button> <button id="clear" class="btn btn-danger" onclick="clearCodeMC('generateMC')">Clear Code</button><hr />
+<h2>Copy &amp; Paste Code</h2>
+<p>Click the Copy Code button above to copy the code to the clipboard. On your own D2L page, open the HTML editor, click the Insert Stuff icon, choose Enter Embed Code, right-click and choose Paste. (The preview will not be accurate.)</p>
+<p><b>Make sure to click Save and Close BEFORE testing the buttons. DO NOT CLICK on the buttons while still in editing mode or D2L will change the code.</b></p>
+<p>To add another question, click Clear Question and Clear Code above to clear out/uncheck the boxes and start over.</p>
+<p>Student answers are not tracked or graded and will be reset when refreshing the page.</p>
+</div>
+<div class="col-12"><footer>
+<p><img src="../_assets/img/logo.png" alt="" /></p>
+</footer></div>
+</div>
+</div>
+</main></body>
+</html>

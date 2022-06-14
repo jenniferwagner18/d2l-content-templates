@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="../_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css">
+<link rel="stylesheet" href="../_assets/css/styles.min.css">
+<link rel="stylesheet" href="../_assets/css/custom.css">
+   <script src="../_assets/thirdpartylib/jquery/jquery-3.3.1.slim.min.js" defer></script>
+   <script src="../_assets/thirdpartylib/popper-js/popper.min.js" defer></script>
+   <script src="../_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js" defer></script>
+   <script src="../_assets/js/scripts.min.js" defer></script>
+   <script src="../_assets/js/question-shortanswer.js" defer></script>
+   <title>Create Code for Short Answer Questions</title>
+</head>
+
+<body><main>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-10 offset-sm-1">
+<h1>Create Code for Short Answer or Fill in the Blank Questions</h1>
+<p><strong>** DO NOT EDIT THIS PAGE. Enter a title above and save this page in a hidden module. **</strong></p>
+<h2>Sample Short Answer Question</h2>
+<fieldset><legend>What is the most popular pet?</legend>
+<input id="answer" type="text" size="30" aria-label="Answer"> <button class="btn btn-dark" onclick="checkSA()">Check Answer</button>
+<div id="result" role="alert"><p>Feedback will show here.</p></div>
+<script>
+var SAclicks = 0;
+function checkSA() {
+SAclicks += 1;
+var guess, feedback;
+guess = document.getElementById("answer").value.toLowerCase();
+if (guess == "dog") 
+{
+  var green = document.createElement("strong");
+  green.style.color = "green";
+  green.innerHTML = "Attempt " + SAclicks + ": Correct!";
+  var element = document.getElementById("result").children[0];
+  element.replaceChild(green, element.childNodes[0]);
+}
+else 
+{
+var red = document.createElement("strong");
+red.style.color = "#dc143c";
+red.innerHTML = "Attempt " + SAclicks + ": Incorrect! Try again!";
+var element = document.getElementById("result").children[0];
+element.replaceChild(red, element.childNodes[0]);
+}
+}
+</script>
+<hr />
+<h2>Create Your Own Question</h2>
+<p>Enter the question number and the correct answer below as well as an additional correct answer, if needed. For example, this can account for spelling variations (color and colour) or numbers as words and digits (ten and 10). Your text will be changed to lowercase so the answers will be case insensitive. You only need to enter the question number if you are inserting more than one short answer question per page. Required fields are marked with an asterisk (*).</p>
+<fieldset><legend>Short Answer Question</legend>
+<p><label>Enter the question number. <input id="number" type="text" size="5" /> (Leave blank if you only need one short answer question per page)</label></p>
+<p><label>Enter the short answer question. * <input id="question" type="text" size="50" required/></label></p>
+<p><label>Enter the correct answer. * <input id="correct" type="text" size="40" required/></label></p>
+<p><label>Enter an additional correct answer: <input id="additional" type="text" size="40" /> (not required)</label></p>
+</fieldset>
+<p><button class="btn btn-success" onclick="createCode()">Create Code</button> <button id="clearQ" class="btn btn-danger" onclick="clearQuestion()">Clear Question</button></p>
+<p>Code will generate below:</p>
+<p id="generate" style="user-select: all;" class="bg-light"></p>
+<button id="copied" class="btn btn-success" onclick="copyCode('generate')">Copy Code</button> <button id="clear" class="btn btn-danger" onclick="clearCode('generate')">Clear Code</button><hr />
+<h2>Copy &amp; Paste Code</h2>
+<p>Click the Copy Code button above to copy the code to the clipboard. On your own &nbsp;D2L page, go to Edit HTML, click the Insert Stuff icon, choose Enter Embed Code, right-click and choose Paste. (The preview will just show the Submit button.)</p>
+<p><b>Make sure to click Save and Close BEFORE testing the Submit button. DO NOT CLICK on the button while still in editing mode or D2L will change the code.</b></p>
+<p>To add another question, click Clear Question and Clear Code above to clear out the boxes and start over. Make sure to type the question number in the first box if you are using more than one short answer question on a page.</p>
+<p>Student answers are not tracked or graded and will be reset when refreshing the page.</p>
+</div>
+<div class="col-12"><footer>
+<p><img src="../_assets/img/logo.png" alt="" /></p>
+</footer></div>
+</div>
+</div>
+</main></body>
+</html>

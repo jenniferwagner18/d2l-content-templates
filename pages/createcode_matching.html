@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="../_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css">
+<link rel="stylesheet" href="../_assets/css/styles.min.css">
+<link rel="stylesheet" href="../_assets/css/custom.css">
+   <script src="../_assets/thirdpartylib/jquery/jquery-3.3.1.slim.min.js" defer></script>
+   <script src="../_assets/thirdpartylib/popper-js/popper.min.js" defer></script>
+   <script src="../_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js" defer></script>
+   <script src="../_assets/js/scripts.min.js" defer></script>
+   <script src="https://d3js.org/d3.v5.min.js" defer></script>
+   <script src="../_assets/js/question-matching.js" defer></script>
+<title>Create Code for Matching Questions</title>
+ </head>
+ <body><main>
+ <div class="container-fluid">
+ <div class="row">
+ <div class="col-sm-10 offset-sm-1">
+ <h1>Create Code for Matching Questions</h1>
+ <p><strong>** DO NOT EDIT THIS PAGE. Enter a title above and save this page in a hidden module. **</strong></p>
+ <h2>Sample Matching Question</h2>
+ <fieldset><legend>Choose a university and then choose that university's mascot.</legend>
+ <div class="container">
+ <div class="row">
+ <div class="col-sm"><p>Choices:</p>
+   <input type="button" class="btn btn-light btn-block" value="Purdue" onclick="this.value='1. Purdue'; this.style.backgroundColor='#B81414'; this.style.color='white';" /> 
+  <input type="button" class="btn btn-light btn-block" value="Michigan State" onclick="this.value='2. Michigan State'; this.style.backgroundColor='#AB5D03'; this.style.color='white';" /> 
+  <input type="button" class="btn btn-light btn-block" value="Penn State" onclick="this.value='3. Penn State'; this.style.backgroundColor='#6E7002'; this.style.color='white';" /> 
+  <input type="button" class="btn btn-light btn-block" value="Michigan" onclick="this.value='4. Michigan'; this.style.backgroundColor='#02701E'; this.style.color='white';" /> 
+  <input type="button" class="btn btn-light btn-block" value="Rutgers" onclick="this.value='5. Rutgers'; this.style.backgroundColor='#144BB8'; this.style.color='white';" /> 
+  <input type="button" class="btn btn-light btn-block" value="Illinois" onclick="this.value='6. Illinois'; this.style.backgroundColor='#2B0270'; this.style.color='white';" />
+ <p></p>
+ </div>
+ <div class="col-sm"><p>Matches:</p>
+   <input type="button" class="btn btn-light btn-block" value="Scarlet Knights" onclick="this.style.backgroundColor='#144BB8'; this.style.color='white'; this.value='5. Scarlet Knights';" /> 
+   <input type="button" class="btn btn-light btn-block" value="Wolverines" onclick="this.style.backgroundColor='#02701E'; this.style.color='white'; this.value='4. Wolverines';" /> 
+   <input type="button" class="btn btn-light btn-block" value="Nittany Lions" onclick="this.style.backgroundColor='#6E7002'; this.style.color='white'; this.value='3. Nittany Lions';" /> 
+   <input type="button" class="btn btn-light btn-block" value="Illini" onclick="this.style.backgroundColor='#2B0270'; this.style.color='white'; this.value='6. Illini';" /> 
+   <input type="button" class="btn btn-light btn-block" value="Boilermakers" onclick="this.style.backgroundColor='#B81414'; this.style.color='white'; this.value='1. Boilermakers';" /> 
+   <input type="button" class="btn btn-light btn-block" value="Spartans" onclick="this.style.backgroundColor='#AB5D03'; this.style.color='white'; this.value='2. Spartans';" /></div>
+ </div>
+ </div>
+ </fieldset>
+ <hr />
+ <h2>Create Your Own Question</h2>
+ <p>Instruct students to choose a button under Choices and then choose the matching button under Matches. Both numbers and colors will appear with the text you input to indicate the matches. Required fields are marked with an asterisk (*).</p>
+<fieldset><legend>Matching Question</legend>
+ <p><label>Enter your directions for the matching exercise. * <input id="matching" type="text" size="50" required/></label></p>
+ <p>Entries in the left column will stay in the order entered; matches in the right column will be shuffled. (You do not have to use all six.)</p>
+ <label>Choice 1. * <input id="choice1" name="choice" type="text" size="40" required/></label> = <label>Match 1. * <input id="match1" name="match" type="text" size="40" required/></label> <br /><br />
+ 
+ <label>Choice 2. * <input id="choice2" name="choice" type="text" size="40" required/></label> = <label>Match 2. * <input id="match2" name="match" type="text" size="40" required/></label> <br /><br />
+ 
+ <label>Choice 3. <input id="choice3" name="choice" type="text" size="40" /></label> = <label>Match 3. <input id="match3" name="match" type="text" size="40" /></label> <br /><br />
+ 
+ <label>Choice 4. <input id="choice4" name="choice" type="text" size="40" /></label> = <label>Match 4. <input id="match4" name="match" type="text" size="40" /></label> <br /><br />
+ 
+ <label>Choice 5. <input id="choice5" name="choice" type="text" size="40" /></label> = <label>Match 5. <input id="match5" name="match" type="text" size="40" /></label> <br /><br />
+ 
+ <label>Choice 6. <input id="choice6" name="choice" type="text" size="40" /></label> = <label>Match 6. <input id="match6" name="match" type="text" size="40" /></label> <br /><br />
+</fieldset>
+
+ <p><button class="btn btn-success" onclick="createCodeMA()">Create Code</button> <button id="clearQ" class="btn btn-danger" onclick="clearQuestionMA()">Clear Question</button></p>
+<p>Code will generate below:</p>
+<p id="generateMA" style="user-select: all;" class="bg-light"></p>
+<button id="copied" class="btn btn-success" onclick="copyCodeMA('generateMA')">Copy Code</button> <button id="clear" class="btn btn-danger" onclick="clearCodeMA('generateMA')">Clear Code</button><hr />
+<h2>Copy &amp; Paste Code</h2>
+<p>Click the Copy Code button above to copy the code to the clipboard. On your D2L page, open the HTML editor, click the Insert Stuff icon, choose Enter Embed Code, right-click and choose Paste. (The preview will not be accurate.)</p>
+<p><strong>Make sure to click Save and Close BEFORE testing the buttons. DO NOT CLICK on the buttons while still in editing mode or D2L will change the code.</strong></p>
+<p>To add another question, click Clear Question and Clear Code above to clear out the boxes and start over.</p>
+<p>Student answers are not tracked or graded and will be reset when refreshing the page.</p>
+</div>
+</div>
+</div>
+<div class="col-12"><footer>
+<p><img src="../_assets/img/logo.png" alt="" /></p>
+</footer></div>
+</main></body>
+</html>
