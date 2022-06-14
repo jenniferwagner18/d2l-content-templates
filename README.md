@@ -14,7 +14,7 @@ An updated version of the content templates originally designed by Brightspace b
 11. [Images](pages/08_images.html)
 12. [Accordions](pages/09_accordions.html)
 13. [Tabs](pages/10_tabs.html)
-14. [Flip Cards](pages/11_flipcads.html)
+14. [Flip Cards](pages/11_flipcards.html)
 15. [Headings and Icons](pages/12_headings_icons.html)
 16. [Multiple Choice or True/False](pages/createcode_multiplechoice.html)
 17. [Short Answer or Fill in the Blank](pages/createcode_shortanswer.html)
