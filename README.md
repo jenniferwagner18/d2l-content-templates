@@ -1,5 +1,5 @@
 # Brightspace by D2L Content Templates
-An updated version of the content templates originally designed by Brightspace by D2L, with more accessibility and interactivity added. For standalone HTML pages of the flip cards and quiz questions, visit the [knowledge-checks repository](https://github.com/jenniferwagner18/knowledge-checks).
+An updated version of the content templates originally designed by Brightspace by D2L, with more accessibility and interactivity added. New window and download icons on links automatically appear and all videos and Microsoft embeds are responsive. Text can be typed over banner images, headings can have background color, and instructions for using Font Awesome icons are included. Flip cards and four question types have been added to create simple knowledge checks directly on content pages.
 
 1. [Blank with Banner Image](pages/00_blank_banner_image.html)
 2. [Blank with Text over Banner Image](pages/00_blank_banner_text.html)
@@ -20,3 +20,5 @@ An updated version of the content templates originally designed by Brightspace b
 17. [Short Answer or Fill in the Blank](pages/createcode_shortanswer.html)
 18. [Matching](pages/createcode_matching.html)
 19. [Ordering](pages/createcode_ordering.html)
+
+For standalone HTML pages of the flip cards and questions, visit the [knowledge-checks repository](https://github.com/jenniferwagner18/knowledge-checks).
