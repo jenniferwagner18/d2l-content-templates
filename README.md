@@ -1,5 +1,5 @@
 # Brightspace by D2L Content Templates
-An updated version of the content templates originally designed by Brightspace by D2L, with more accessibility and interactivity added. New window and download icons on links automatically appear and all videos and Microsoft embeds are responsive. Text can be typed over banner images, headings can have background color, and instructions for using Font Awesome icons are included. Flip cards and four question types have been added to create simple knowledge checks directly on content pages.
+An updated version of the content templates originally designed by Brightspace by D2L, with more accessibility and interactivity added. New window and download icons on links automatically appear and all videos and Microsoft embeds are responsive. Text can be typed over banner images, headings can have a background color or icon in the margin, and instructions for using Font Awesome icons are included. Flip cards and four question types have been added to create simple knowledge checks directly on content pages.
 
 1. [Blank with Banner Image](pages/00_blank_banner_image.html)
 2. [Blank with Text over Banner Image](pages/00_blank_banner_text.html)
