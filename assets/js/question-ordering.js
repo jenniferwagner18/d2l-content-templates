@@ -37,7 +37,7 @@ for (var i = 0; i < shuffledArray.length; i++) {
    document.getElementById("generate").insertAdjacentHTML('beforeend', '<pre>"' + (origArray.indexOf(shuffledArray[i]) + 1) + '", ');
 } // end of for loop
 
- document.getElementById("generate").insertAdjacentHTML('beforeend', '<pre>]; if (JSON.stringify(guessArray) === JSON.stringify(correctOrder))  {  var green = document.createElement("strong"); green.style.color = "green"; green.innerHTML = "Attempt " + ORclicks + ": Correct!"; var element = document.getElementById("order-result' + qnumber + '").children[0]; element.replaceChild(green, element.childNodes[0]); }  else { var red = document.createElement("strong"); red.style.color = "#dc143c"; red.innerHTML = "Attempt " + ORclicks + ": Incorrect! Try again!"; var element = document.getElementById("order-result' + qnumber + '").children[0]; element.replaceChild(red, element.childNodes[0]); } } &lt;/script&gt; &lt;/fieldset&gt;</pre>');
+ document.getElementById("generate").insertAdjacentHTML('beforeend', '<pre>]; if (JSON.stringify(guessArray) === JSON.stringify(correctOrder))  {  var green = document.createElement("strong"); green.style.color = "green"; green.innerHTML = "Attempt " + ORclicks' + qnumber + ' + ": Correct!"; var element = document.getElementById("order-result' + qnumber + '").children[0]; element.replaceChild(green, element.childNodes[0]); }  else { var red = document.createElement("strong"); red.style.color = "#dc143c"; red.innerHTML = "Attempt " + ORclicks' + qnumber + ' + ": Incorrect! Try again!"; var element = document.getElementById("order-result' + qnumber + '").children[0]; element.replaceChild(red, element.childNodes[0]); } } &lt;/script&gt; &lt;/fieldset&gt;</pre>');
 
 } // end of if collection not empty
   else
