@@ -16,6 +16,7 @@ function createCodeMA()
  var theChoices = document.getElementsByName("choice");
   for (var i = 0; i < theChoices.length; i++) {
     var answerChoice = theChoices[i].value;
+    answerChoice = answerChoice.replace(/'/g, "&rsquo;").replace(/"/g, "&Prime;"); // replace apostrophe and double quotes with right single quote and double prime quotes
     if (answerChoice !== null && answerChoice !== '')
       {
         document.getElementById("generateMA").insertAdjacentHTML('beforeend', '<pre>&lt;input type="button" class="btn btn-light btn-block" value="' + answerChoice + '" onclick="this.value=\'' + (i + 1) + ". " + answerChoice + '\'; this.style.backgroundColor=\'' + colorPalette[i] + '\'; this.style.color=\'white\';"&gt;</pre>');
@@ -32,10 +33,13 @@ document.getElementById("generateMA").insertAdjacentHTML('beforeend', '<pre>&lt;
 var allMatches = [];
 var theMatches = document.getElementsByName("match");
 for (var i = 0; i < theMatches.length; i++) {
-  if (theMatches[i].value !== null && theMatches[i].value !== '') {
-    allMatches.push(theMatches[i].value);
+ var answerMatch = theMatches[i].value;
+  answerMatch = answerMatch.replace(/'/g, "&rsquo;").replace(/"/g, "&Prime;"); // replace apostrophe and double quotes with right single quote and double prime quotes
+  if (answerMatch !== null && answerMatch !== '') {
+    allMatches.push(answerMatch);
   }
     }  // end of for loop for right column
+      
 // shuffle array elements
 do {
     var shuffledArray = d3.shuffle(allMatches.slice());
