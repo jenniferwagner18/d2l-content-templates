@@ -11,12 +11,14 @@ function createCodeMC() {
 
     for (var i = 0; i < theChoices.length; i++) {
       var answerChoice = theChoices[i].value;
+       answerChoice = answerChoice.replace(/"/g, '&Prime;'); // replace double straight quotes with double prime quotes
+      var choiceClick = answerChoice.replace(/'/g, "\\'"); // escape apostrophe (or straight single quote) for onclick only
       if (answerChoice !== null && answerChoice !== '') {
         if (theChecks[i].checked == true) {
-          document.getElementById("generateMC").insertAdjacentHTML('beforeend', '<pre>&lt;input type="button" class="btn btn-light btn-block" value="' + answerChoice + '" onclick="this.style.backgroundColor=\'green\'; this.style.color=\'white\';  this.value=\'Correct: ' + answerChoice + '\';"&gt;</pre>');
+          document.getElementById("generateMC").insertAdjacentHTML('beforeend', '<pre>&lt;input type="button" class="btn btn-light btn-block" value="' + answerChoice + '" onclick="this.style.backgroundColor=\'green\'; this.style.color=\'white\';  this.value=\'Correct: ' + choiceClick + '\';"&gt;</pre>');
         }
         else {
-          document.getElementById("generateMC").insertAdjacentHTML('beforeend', '<pre>&lt;input type="button" class="btn btn-light btn-block" value="' + answerChoice + '" onclick="this.style.backgroundColor=\'#dc143c\'; this.style.color=\'white\'; this.value=\'Incorrect: ' + answerChoice + '\';"&gt;</pre>');
+          document.getElementById("generateMC").insertAdjacentHTML('beforeend', '<pre>&lt;input type="button" class="btn btn-light btn-block" value="' + answerChoice + '" onclick="this.style.backgroundColor=\'#dc143c\'; this.style.color=\'white\'; this.value=\'Incorrect: ' + choiceClick + '\';"&gt;</pre>');
         }
       }
       else {
